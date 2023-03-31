@@ -1,84 +1,57 @@
 <html>
-<head>  
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', {'packages':['gauge']});
-    google.charts.setOnLoadCallback(drawChart);
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['', ''],
+          ['', 0]
+        ]);
 
-      var data = google.visualization.arrayToDataTable([
-        ['', ''],
-        ['', 0]
-      ]);
+        var options = {
+          width: 400, 
+          height: 400,
+          redFrom: 0, 
+          redTo: 40.5,
+          yellowFrom:40.5, 
+          yellowTo: 60.5,
+          greenFrom:60.5, 
+          greenTo:80.5,
+          greenFrom:60.5, 
+          greenTo: 100,
+          minorTicks: 5,
+          majorTicks: ['0%','25%','50%','75%','100%'],
+          max: 100,
+          min: 0,
+          startAngle: -45,
+          endAngle: 45
+        };
 
-      var options = {
-        width: 400, height: 400,
-        redFrom: 0, redTo: 40.5,
-        yellowFrom:40.5, yellowTo: 60.5,
-        greenFrom:60.5, greenTo:80.5,
-        greenFrom:60.5, greenTo: 100,
-        minorTicks: 5,
-        majorTicks: ['0%','25%','50%','75%','100%'],
-        max: 100,
-        min: 0,
-        startAngle: -45,
-        endAngle: 45
-      };
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
 
-      chart.draw(data, options);
+        var input = document.getElementById("input");
+        input.addEventListener("change", function() {
+          var value = parseFloat(input.value);
+          if (isNaN(value) || value < 0 || value > 100) {
+            alert("Pourcentage de la propriete RealT entre 0% et 100%");
+          } else {
+            data.setValue(0, 1, value);
+            chart.draw(data, options);
+          }
+        });
+      }
+    </script>
 
-      var input = document.getElementById("input");
-      input.addEventListener("change", function() {
-        var value = parseFloat(input.value);
-        if (isNaN(value) || value < 0 || value > 100) {
-          alert("Pourcentage de la propriete RealT entre 0% et 100%");
-        } else {
-          data.setValue(0, 1, value);
-          chart.draw(data, options);
-        }
-      });
-    }
-  </script>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
 
-</head>
-<body>
-  <div id="chart_div" style="width: 400px; height: 400px;"></div>
-  <p>Pourcentage de la propriete RealT entre 0% et 100%</p>
-  <input id="input" type="text">
-</body>
-  
-  
-<head>
-<style>
-  .container {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .jauge {
-    /* votre code pour la jauge */
-  }
-
-  textarea {
-    width: 800px;
-    height: 400px;
-    padding: 10px;
-    border: 1px solid black;
-    margin: 10px;
-  }
-</style>
-</head>
-<body>
-  <div class="container">
-    <div class="jauge">
-      <!-- votre code pour la jauge -->
-    </div>
-    <textarea id="texte" name="texte" placeholder="Saisissez du texte ici"></textarea>
-  </div>
-</body>
-  
-  
-</html>
+      .jauge {
+        flex: 0 0
