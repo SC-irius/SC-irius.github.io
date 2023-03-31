@@ -9,14 +9,15 @@
 
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['Pourcentage', 0]
+        ['', 0]
       ]);
 
       var options = {
         width: 400, height: 400,
-        redFrom: 0, redTo: 25,
-        yellowFrom:25, yellowTo: 50,
-        greenFrom:50, greenTo: 100,
+        redFrom: 0, redTo: 40.5,
+        yellowFrom:40.5, yellowTo: 60.5,
+        orangeFrom:60.5, orangeTo:80.5,
+        greenFrom:60.5, greenTo: 100,
         minorTicks: 5,
         majorTicks: ['0%', '25%', '50%', '75%', '100%'],
         max: 100,
@@ -33,7 +34,7 @@
       input.addEventListener("change", function() {
         var value = parseFloat(input.value);
         if (isNaN(value) || value < 0 || value > 100) {
-          alert("Veuillez entrer un nombre entre 0 et 100");
+          alert("Pourcentage de la propriete RealT entre 0% et 100%");
         } else {
           data.setValue(0, 1, value);
           chart.draw(data, options);
