@@ -52,10 +52,6 @@
       top: 90px;
     }
 
-    .brick {
-      font-size: 2em;
-    }
-
     .needle {
       position: absolute;
       width: 5%;
@@ -122,3 +118,66 @@
      .gauge::after {
        content:none; 
      }
+     
+     /* Removing the label */
+
+     .gauge-data {
+       display:none; 
+     }
+     
+     /* Adding a label for the percentage */
+
+     .container::after {
+       content:"Pourcentage"; 
+       color:white; 
+       font-size:1.2em; 
+       position:absolute; 
+       bottom:-10%; 
+       left:50%; 
+       transform:
+         translateX(-50%); 
+     }
+     
+     /* Making the needle more futuristic and elegant */
+
+     .needle {
+       border-radius:
+         50% 50% 50% 50% /50% 50% calc(100% - var(--needle-width)) var(--needle-width); 
+       --needle-width:
+         calc(var(--needle-height) / var(--needle-height)); 
+       --needle-height:
+         calc(var(--gauge-height) / 2); 
+       --gauge-height:
+         200px; 
+     }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="gauge">
+      <div class="gauge-bg"></div>
+      <div class="gauge-fill"></div>
+      <div class="gauge-cover"></div>
+      <div class="gauge-data"></div>
+      <div class="needle"></div>
+    </div>
+    <p>Entrez un pourcentage entre 0 et 100:</p>
+    <input id="input" type="text">
+  </div>
+  <script>
+    var gauge = document.querySelector(".gauge-fill");
+    var needle = document.querySelector(".needle");
+    var input = document.querySelector("#input");
+    input.addEventListener("change", function() {
+      var value = parseFloat(input.value);
+      if (isNaN(value) || value < 0 || value > 100) {
+        alert("Veuillez entrer un nombre entre 0 et 100");
+      } else {
+        var angle = -45 + value * 0.9; // map the value from [0, 100] to [-45, 45]
+        gauge.style.transform = "rotate(" + angle + "deg)";
+        needle.style.transform = "rotate(" + (angle - 90) + "deg)";
+      }
+    });
+  </script>
+</body>
+</html>
