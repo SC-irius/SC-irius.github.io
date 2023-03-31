@@ -1,20 +1,69 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Ma jauge</title>
-  <link rel="stylesheet" href="style.css">
+<style>
+#container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+}
+
+#circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 25px solid transparent;
+  border-top-color: green;
+  border-right-color: yellow;
+  border-bottom-color: orange;
+  border-left-color: red;
+  transform: rotate(-45deg);
+}
+
+#needle {
+  width: 5px;
+  height: 125px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+#input {
+  width: 100px;
+  position: absolute;
+  bottom: -50px;
+  left: calc(50% - 50px);
+}
+
+</style>
+<script>
+function updateNeedle() {
+  var input = document.getElementById("input");
+  var needle = document.getElementById("needle");
+  
+  // Validate input value
+  var value = parseFloat(input.value);
+  
+  if (isNaN(value) || value < 0 || value > 100) {
+    alert("Veuillez entrer un nombre entre 0 et 100");
+    return;
+  }
+  
+   // Convert percentage to angle
+   var angle = value * (5 * Math.PI /4) /100 - Math.PI /4;
+
+   // Rotate needle
+   needle.style.transform = "rotate(" + angle + "rad)";
+}
+</script>
 </head>
 <body>
-  <div class="gauge">
-    <div class="needle"></div>
-    <div class="label">0%</div>
-  </div>
-  <form id="gaugeForm">
-    <label for="gaugeInput">Pourcentage : </label>
-    <input type="number" id="gaugeInput" min="0" max="100" value="0">
-    <button type="submit">Placer l'aiguille</button>
-  </form>
-  <script src="script.js"></script>
+<div id="container">
+<div id="circle"></div>
+<div id="needle"></div>
+<input id="input" type="text" placeholder="Entrez un pourcentage" onkeyup="updateNeedle()">
+</div>
 </body>
 </html>
