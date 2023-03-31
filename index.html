@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jauge RealT</title>
+</head>
+<body>
+  <canvas> id="jauge"></canvas>
+  <script>
+    // Créer un élément canvas
+var canvas = document.createElement("canvas");
+var ctx = canvas.getContext("2d");
+canvas.width = 300;
+canvas.height = 300;
+document.body.appendChild(canvas);
+
+// Définir les paramètres de la jauge
+var rayon = 125; // rayon du cercle
+var centreX = canvas.width / 2; // coordonnée x du centre
+var centreY = canvas.height / 2; // coordonnée y du centre
+var angleDebut = -Math.PI / 2; // angle de départ en radians
+var angleFin = Math.PI * 3 / 2; // angle de fin en radians
+var pourcentage = 0; // pourcentage initial
+var couleur; // couleur de la jauge
+
+// Dessiner la jauge
+function dessinerJauge() {
+  // Effacer le canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Calculer l'angle correspondant au pourcentage
+  var angle = angleDebut + (angleFin - angleDebut) * pourcentage / 100;
+
+  // Choisir la couleur selon le pourcentage
+  if (pourcentage < 50) {
+    // Vert fluo à jaune
+    couleur = "rgb(" + Math.floor(255 * pourcentage / 50) + ",255,0)";
+  } else {
+    // Jaune à rouge vif
+    couleur = "rgb(255," + Math.floor(255 * (100 - pourcentage) / 50) + ",0)";
+  }
+
+  // Dessiner le cercle extérieur
+  ctx.beginPath();
+  ctx.arc(centreX, centreY, rayon, angleDebut, angleFin);
+  ctx.lineWidth = 12;
+  ctx.strokeStyle = "#e0e0e0";
+  ctx.stroke();
+
+  // Dessiner le secteur coloré
+  ctx.beginPath();
+  ctx.arc(centreX, centreY, rayon, angleDebut, angle);
+  ctx.lineWidth = 12;
+  ctx.strokeStyle = couleur;
+  ctx.stroke();
+
+  // Dessiner l'aiguille
+  ctx.beginPath();
+  ctx.moveTo(
+    centreX + Math.cos(angle) * (rayon - 20),
+    centreY + Math.sin(angle) * (rayon - 20)
+  ); // point de départ sur le cercle
+  ctx.lineTo(
+    centreX + Math.cos(angle) * (rayon - 45),
+    centreY + Math.sin(angle) * (rayon - 45)
+  ); // point d'arrivée de l'aiguille
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = "#e0e0e0";
+  ctx.stroke();
+
+  // Dessiner le cercle intérieur
+  ctx.beginPath();
+  ctx.arc(centreX, centreY, rayon - 55, angleDebut, angleFin);
+  ctx.fillStyle = "#fafafa";
+  ctx.fill();
+
+  // Dessiner le texte du pourcentage
+  ctx.font = "40px Arial";
+  ctx.fillStyle = "#555555";
+  ctx.textAlign = "center";
+  ctx.fillText(pourcentage + "%", centreX, centreY + 15);
+}
+
+// Augmenter le pourcentage et redessiner la jauge toutes les secondes
+setInterval(function () {
+    if (pourcentage < 100) {
+        pourcentage++;
+        dessinerJauge();
+    }
+}, 20);
+  </script>
+  
+</body>
+</html>
