@@ -1,27 +1,5 @@
 <html>
-<head>
-  
-  
-  <style>
-  .container {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  input[type=text] {
-    width: 400px;
-    padding: 10px;
-    border: 1px solid black;
-    margin: 10px;
-  }
-</style>
-</head>
-<body>
-  <div class="container">
-    <input type="text" id="texte" name="texte" placeholder="Saisissez du texte ici">
-  </div>
-  
-  
+<head>  
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {'packages':['gauge']});
@@ -64,6 +42,24 @@
       });
     }
   </script>
+    <style>
+  .container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  input[type=text] {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <input type="text" id="texte" name="texte" placeholder="Saisissez du texte ici">
+  </div>
 </head>
 <body>
   <div id="chart_div" style="width: 400px; height: 400px;"></div>
