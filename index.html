@@ -49,6 +49,8 @@
   <p>Pourcentage de la propriete RealT entre 0% et 100%</p>
   <input id="input" type="text">
 </body>
+  
+  
 <head>
 <style>
   .container {
@@ -56,9 +58,14 @@
     justify-content: flex-end;
   }
 
-  input[type=text] {
-    width: 800px;
-    padding: 100px;
+  .jauge {
+    /* votre code pour la jauge */
+  }
+
+  textarea {
+    width: 200px;
+    height: 100px;
+    padding: 10px;
     border: 1px solid black;
     margin: 10px;
   }
@@ -66,7 +73,12 @@
 </head>
 <body>
   <div class="container">
-    <input type="text" id="texte" name="texte" placeholder="Saisissez du texte ici">
+    <div class="jauge">
+      <!-- votre code pour la jauge -->
+    </div>
+    <textarea id="texte" name="texte" placeholder="Saisissez du texte ici"></textarea>
   </div>
 </body>
+  
+  
 </html>
