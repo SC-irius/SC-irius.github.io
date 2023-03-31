@@ -1,69 +1,50 @@
 <html>
 <head>
-<style>
-#container {
-  width: 300px;
-  height: 300px;
-  position: relative;
-  margin: auto;
-}
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['gauge']});
+    google.charts.setOnLoadCallback(drawChart);
 
-#circle {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  border: 25px solid transparent;
-  border-top-color: green;
-  border-right-color: yellow;
-  border-bottom-color: orange;
-  border-left-color: red;
-  transform: rotate(-45deg);
-}
+    function drawChart() {
 
-#needle {
-  width: 5px;
-  height: 125px;
-  background-color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: bottom center;
-}
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Pourcentage', 0]
+      ]);
 
-#input {
-  width: 100px;
-  position: absolute;
-  bottom: -50px;
-  left: calc(50% - 50px);
-}
+      var options = {
+        width: 400, height: 400,
+        redFrom: 0, redTo: 25,
+        yellowFrom:25, yellowTo: 50,
+        greenFrom:50, greenTo: 100,
+        minorTicks: 5,
+        majorTicks: ['0%', '25%', '50%', '75%', '100%'],
+        max: 100,
+        min: 0,
+        startAngle: -45,
+        endAngle: 45
+      };
 
-</style>
-<script>
-function updateNeedle() {
-  var input = document.getElementById("input");
-  var needle = document.getElementById("needle");
-  
-  // Validate input value
-  var value = parseFloat(input.value);
-  
-  if (isNaN(value) || value < 0 || value > 100) {
-    alert("Veuillez entrer un nombre entre 0 et 100");
-    return;
-  }
-  
-   // Convert percentage to angle
-   var angle = value * (5 * Math.PI /4) /100 - Math.PI /4;
+      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-   // Rotate needle
-   needle.style.transform = "rotate(" + angle + "rad)";
-}
-</script>
+      chart.draw(data, options);
+
+      var input = document.getElementById("input");
+      input.addEventListener("change", function() {
+        var value = parseFloat(input.value);
+        if (isNaN(value) || value < 0 || value > 100) {
+          alert("Veuillez entrer un nombre entre 0 et 100");
+        } else {
+          data.setValue(0, 1, value);
+          chart.draw(data, options);
+        }
+      });
+    }
+  </script>
 </head>
 <body>
-<div id="container">
-<div id="circle"></div>
-<div id="needle"></div>
-<input id="input" type="text" placeholder="Entrez un pourcentage" onkeyup="updateNeedle()">
-</div>
+  <div id="chart_div" style="width: 400px; height: 400px;"></div>
+  <p>Entrez un pourcentage entre 0 et 100:</p>
+  <input id="input" type="text">
 </body>
 </html>
