@@ -25,6 +25,8 @@
   height: 100px;
   border-radius: 3px 3px 0 0;
   background: #000;
+  transform-origin: bottom center;
+  transition: transform 0.5s ease-in-out;
 }
 .gauge .needle::before {
   content: '';
@@ -44,4 +46,12 @@
   font-size: 20px;
   font-weight: bold;
   color: #000;
+}
+
+.gauge .needle.rotated {
+  transform: translate(-50%, -100%) rotate(calc(45deg + var(--deg)));
+}
+
+.gauge .needle.rotated::before {
+  transform: rotate(calc(-45deg - var(--deg)));
 }
