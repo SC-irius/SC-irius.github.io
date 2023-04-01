@@ -1,3 +1,4 @@
+import os
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
     rue = input("\n\n______________________________\nEntrez la rue: ")
