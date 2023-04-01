@@ -76,6 +76,14 @@
 </head>
 <body onload="brython()">
 <script type="text/python" src="realt_metrics_usa.py"></script>
+
+<script type="text/python">
+    from browser import document
+    from realt_metrics_usa import note_globale
+
+    document["input"].value = note_globale
+  </script>  
+  
 </body>
   
   
