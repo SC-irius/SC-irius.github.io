@@ -1,4 +1,5 @@
 import os
+
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
     rue = input("\n\n______________________________\nEntrez la rue: ")
@@ -154,19 +155,19 @@ def evaluer_bien_immobilier():
 
     if zone_inondable == 1 :
         print("\n- Il convient de noter que la propriété",rue,"est située dans une zone sujette aux inondations\n  potentielles, ce qui peut entraîner des risques supplémentaires et des coûts d'assurance plus élevés.")
-
+        
     elif zone_inondable == 2 :
         print("\n- Il convient de souligner que la propriété située",rue,"n'est pas exposée à des risques d'inondation\n  potentielle, ce qui peut permettre de bénéficier de coûts d'assurance plus bas et réduire les risques liés à la propriété.") 
-
+        
     if tendance_marche_immobilier == 3:
         print("\n- Même si le marché immobilier de la région affiche une tendance haussière pour le moment, il est\n  important de rester attentif aux tendances futures pour prendre des décisions avisées.")
-
+        
     elif tendance_marche_immobilier == 2:
         print("\n- Bien que le marché immobilier dans la région soit stable pour le moment, il est toujours important\n  de surveiller les tendances et les changements possibles pour prendre des décisions éclairées à l'avenir. ")
-
+                    
     elif tendance_marche_immobilier == 1:
         print("\n- Malgré la baisse actuelle du marché immobilier dans la région, il est impératif de rester\n  vigilant quant aux tendances et aux évolutions futures afin de prendre des décisions éclairées et réussies.")
-
+            
 
     print("\n\nLa note globale de",rue,"est de :", round(note_globale *100 , 2), "%")
     # Affichage du résumé des résultats
@@ -178,9 +179,8 @@ def evaluer_bien_immobilier():
         print(rue,"est considere comme une affaire correcte.")
     else:
         print(rue,"est considere comme une mauvaise affaire.")
-
+        
 
 evaluer_bien_immobilier()
-
 os.system("pause")
 input("apuyer enter pour fermer la fenetre")
