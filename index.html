@@ -52,7 +52,7 @@
     <div class="jauge" style="margin-left: 20px;">
       <div id="chart_div" style="width: 400px; height: 400px;position: absolute; top: 10px; left: 10px"></div>
       <p style="position: absolute; top: 500px;">Pourcentage de la propriete RealT entre 0% et 100%</p>
-      <input id="input" type="text" style="position: absolute; top: 540px;">
+      <input id="input" type="text" style="position: absolute; top: 540px;" readonly value="{{window.note_globale}}">
     </div>
     <div class="texte">
       
@@ -77,13 +77,6 @@
 <body onload="brython()">
 <script type="text/python" src="realt_metrics_usa.py"></script>
 
-<script type="text/python">
-    from browser import document
-    from realt_metrics_usa import note_globale
-
-    document["input"].value = note_globale
-  </script>  
-  
 </body>
   
   
