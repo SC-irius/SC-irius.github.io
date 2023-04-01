@@ -181,3 +181,5 @@ def evaluer_bien_immobilier():
 
 evaluer_bien_immobilier()
 
+os.system("pause")
+input("apuyer enter pour fermer la fenetre")
