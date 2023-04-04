@@ -3,8 +3,8 @@ import os
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
     rue = document["rue"].value
-    prix = float(input("Entrez le prix de {} (Underlying Asset Price) en ($): ".format(rue)))
-    expected_income = float(input("Quelle est le revenu attentu par annee (Expected Income) en (%) : "))
+    prix = document["prix"].value
+    expected_income = document["expected_income"].value
     surface = float(input("Entrez la surface de {} (Interior Size sqft) en (sqft): ".format(rue)))
     zone_prix_m2 = float(input("À combien s'élève le coût moyen par sqft dans cette région ? en ($/sqft): "))
     age = int(input("Combien d'années s'est-il écoulé depuis la construction de {} ? en (annees): ".format(rue)))
