@@ -4,6 +4,7 @@ import cgi # importe le module cgi qui permet de traiter les données du formula
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
     rue = document["rue"].value
+    print(rue)
     prix = document["prix"].value
     expected_income = document["expected_income"].value
     surface = document["surface"].value
