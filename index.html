@@ -33,6 +33,9 @@
     
   </form>
   
+
+  
+  <!-- ici c'est le package online de la communication du html avec python -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {'packages':['gauge']});
@@ -107,10 +110,16 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js"></script>
 </head>
-<body onload="brython()">
-<script type="text/python" src="realt_metrics_usa.py"></script>
-
-</body>
   
+<body onload="brython()">
+  <!-- votre contenu HTML -->
+  <div id="stdout"></div> <!-- élément qui affichera le résultat -->
+  <script type="text/python" src="realt_metrics_usa.py"></script>
+</body>
+
+ 
+<!-- élément qui affichera le résultat -->
+<div id="stdout"></div> 
+<script type="text/python">  
   
 </html>
