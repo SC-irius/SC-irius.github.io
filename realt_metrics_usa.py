@@ -2,7 +2,7 @@ import os
 
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
-    rue = document["rue"].value
+    rue = document["rue"].text
     prix = document["prix"].value
     expected_income = document["expected_income"].value
     surface = document["surface"].value
