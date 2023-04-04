@@ -3,13 +3,13 @@ import cgi # importe le module cgi qui permet de traiter les données du formula
 
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
-    rue = document["rue"].text
+    rue = document["rue"].value
     prix = document["prix"].value
     expected_income = document["expected_income"].value
     surface = document["surface"].value
     zone_prix_m2 = document["zone_prix_m2"].value
     age = document["age"].value
-    presence_ecoles = document["presence_ecoles"].text
+    presence_ecoles = document["presence_ecoles"].value
     presence_transports = int(input("{} est-il situe a proximite des transports en commun? \n| 1 | oui | 2 | non \n".format(rue)))
     presence_commerces = int(input("{} est-il situe a proximite de commerces? \n| 1 | oui | 2 | non \n".format(rue)))
     zone_inondable = int(input("{} est-il situe dans une zone inondable? \n| 1 | oui | 2 | non \n".format(rue)))
