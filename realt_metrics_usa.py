@@ -1,4 +1,5 @@
 import os
+import cgi # importe le module cgi qui permet de traiter les données du formulaire
 
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
@@ -8,7 +9,7 @@ def evaluer_bien_immobilier():
     surface = document["surface"].value
     zone_prix_m2 = document["zone_prix_m2"].value
     age = document["age"].value
-    presence_ecoles = int(input("{} est-il situe à proximite d'ecoles? \n| 1 | oui | 2 | non \n".format(rue)))
+    presence_ecoles = document["presence_ecoles"].text
     presence_transports = int(input("{} est-il situe a proximite des transports en commun? \n| 1 | oui | 2 | non \n".format(rue)))
     presence_commerces = int(input("{} est-il situe a proximite de commerces? \n| 1 | oui | 2 | non \n".format(rue)))
     zone_inondable = int(input("{} est-il situe dans une zone inondable? \n| 1 | oui | 2 | non \n".format(rue)))
