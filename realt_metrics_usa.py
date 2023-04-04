@@ -5,9 +5,9 @@ def evaluer_bien_immobilier():
     rue = document["rue"].value
     prix = document["prix"].value
     expected_income = document["expected_income"].value
-    surface = float(input("Entrez la surface de {} (Interior Size sqft) en (sqft): ".format(rue)))
-    zone_prix_m2 = float(input("À combien s'élève le coût moyen par sqft dans cette région ? en ($/sqft): "))
-    age = int(input("Combien d'années s'est-il écoulé depuis la construction de {} ? en (annees): ".format(rue)))
+    surface = document["surface"].value
+    zone_prix_m2 = document["zone_prix_m2"].value
+    age = document["age"].value
     presence_ecoles = int(input("{} est-il situe à proximite d'ecoles? \n| 1 | oui | 2 | non \n".format(rue)))
     presence_transports = int(input("{} est-il situe a proximite des transports en commun? \n| 1 | oui | 2 | non \n".format(rue)))
     presence_commerces = int(input("{} est-il situe a proximite de commerces? \n| 1 | oui | 2 | non \n".format(rue)))
