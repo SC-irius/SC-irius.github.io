@@ -51,7 +51,7 @@ def evaluer_bien_immobilier():
     else:
         note_etat = 1
 
-    if presence_ecoles == "Oui":
+    if presence_ecoles == "oui":
         note_ecoles = 0.7
     else:
         note_ecoles = 0.4
