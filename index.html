@@ -23,6 +23,13 @@
     
   </form>
   
+  <form method="POST">
+        <p>Est-il situé à proximité d'écoles ?</p>
+        <input type="checkbox" name="choix" value="oui"> Oui
+        <input type="checkbox" name="choix" value="non"> Non
+        <input type="submit" value="Valider">
+  </form>
+  
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load('current', {'packages':['gauge']});
@@ -74,7 +81,7 @@
   <div class="container" style="align-items: center;">
     <div class="jauge" style="margin-left: 20px;">
       <div id="chart_div" style="width: 400px; height: 400px;position: absolute; top: 10px; left: 10px"></div>
-      <p style="position: absolute; top: 450px;">Pourcentage de la propriete RealT entre 0% et 100%</p>
+      <p style="position: absolute; top: 440px;">Pourcentage de la propriete RealT entre 0% et 100%</p>
       <input id="input" type="text" style="position: absolute; top: 480px;">
     </div>
     <div class="texte">
