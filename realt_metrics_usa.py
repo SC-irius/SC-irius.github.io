@@ -2,7 +2,7 @@ import os
 
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
-    rue = input("\n\n______________________________\nEntrez la rue: ")
+    rue = document["rue"].value
     prix = float(input("Entrez le prix de {} (Underlying Asset Price) en ($): ".format(rue)))
     expected_income = float(input("Quelle est le revenu attentu par annee (Expected Income) en (%) : "))
     surface = float(input("Entrez la surface de {} (Interior Size sqft) en (sqft): ".format(rue)))
