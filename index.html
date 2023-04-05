@@ -5,7 +5,6 @@
   <h1 style="position: absolute; top: 530px; left: 10px;">Realt.Inc Metrics :</h1>
   <label for="rue" style="position: absolute; top: 600px; left: 10px;" >Entrez la rue:</label>
   <input type="text" id="rue" name="rue" placeholder="Exemple: Rue de la Paix" style="position: absolute; top: 600px; left: 100px;" />
-  <!-- Ajoutez les autres éléments <input> et <label> ici -->
   <label for="prix" style="position: absolute; top: 630px; left: 10px;" >Entrez le prix (Underlying Asset Price) en ($):</label>
   <input type="number" id="prix" name="prix" placeholder="Exemple: 50000" style="position: absolute; top: 630px; left: 310px;" />
   <label for="expected_income" style="position: absolute; top: 660px; left: 10px;" >Quelle est le revenu attentu par annee (Expected Income) en (%):</label>
@@ -16,12 +15,8 @@
   <input type="number" id="" name="zone_prix_m2" placeholder="Exemple: 50" style="position: absolute; top: 720px; left: 478px;" />
   <label for="age" style="position: absolute; top: 750px; left: 10px;" >Combien d'années s'est-il écoulé depuis la construction de la proprite ? en (annees):</label>
   <input type="number" id="" name="age" placeholder="Exemple: 15" style="position: absolute; top: 750px; left: 550px;" />  
-  
-    
-  <!-- Le code pour le bouton de validation -->
-  <input type="submit" value="Valider les données" style="position: absolute; top: 562px; left: 300px;">
-    
-  </form>
+  </form> 
+
   <!-- Le code pour le choix oui ou non -->
   <form method="POST" style="position: absolute; top: 780px; left: 10px;">
   <p style="display: inline">Est-il situé à proximité d'écoles ?</p>
@@ -120,6 +115,9 @@
   <label for="locativesChoice2" style="display: inline-block">Non</label>  
   </form>
   
+  <!-- Le code pour le bouton de validation -->
+  <input type="submit" value="Valider les données" style="position: absolute; top: 562px; left: 300px;">
+  
   
   <!-- ici c'est le package online de la communication du html avec python -->
   <script type=“text/javascript” src=“https://cdn.jsdelivr.net/npm/brython@3.11.2/brython_stdlib.js”></script>
@@ -177,10 +175,7 @@
       <p style="position: absolute; top: 440px;">Pourcentage de la propriete RealT entre 0% et 100%</p>
       <input id="input" type="text" style="position: absolute; top: 480px;">
     </div>
-    <div class="texte">
-      
-      <textarea id="texte" name="texte" placeholder="Saisissez du texte ici" style="position: absolute; top: 50px; left: 410px; vertical-align: middle; border: none;width: 700px; height: 400px;"></textarea>
-    </div>
+
     
   </div>
   <input id="titre" type="text" placeholder="Saisissez un titre ici" style="position: absolute; top: 10px; left: 410px; vertical-align: middle; font-size: 24px; border: none;">
@@ -206,7 +201,7 @@
 
  
 <!-- élément qui affichera le résultat -->
-<div id="stdout"></div> 
+<div id="stdout" placeholder="Saisissez du texte ici" style="position: absolute; top: 50px; left: 410px; vertical-align: middle; border: none;width: 700px; height: 400px;"></div> 
 <script type="text/python">  
   
 </html>
