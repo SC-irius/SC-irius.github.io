@@ -25,15 +25,79 @@
   <!-- Le code pour le choix oui ou non -->
   <form method="POST" style="position: absolute; top: 780px; left: 10px;">
   <p style="display: inline">Est-il situé à proximité d'écoles ?</p>
-  <input type="radio" id="presenceChoice1" name="presence_ecoles" value="oui" style="display: inline-block">
-  <label for="presenceChoice1" style="display: inline-block">Oui</label>
-  <input type="radio" id="presenceChoice2" name="presence_ecoles" value="non" style="display: inline-block">
-  <label for="presenceChoice2" style="display: inline-block">Non</label>
+  <input type="radio" id="ecolesChoice1" name="presence_ecoles" value="oui" style="display: inline-block">
+  <label for="ecolesChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="ecolesChoice2" name="presence_ecoles" value="non" style="display: inline-block">
+  <label for="ecolesChoice2" style="display: inline-block">Non</label>
+  </form>
   <!-- Ajoutez les autres éléments <input> et <label> ici -->
     
+  <form method="POST" style="position: absolute; top: 810px; left: 10px;">
+  <p style="display: inline">Est-il situe a proximite des transports en commun?</p>
+  <input type="radio" id="transportsChoice1" name="presence_transports" value="oui" style="display: inline-block">
+  <label for="transportsChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="transportsChoice2" name="presence_transports" value="non" style="display: inline-block">
+  <label for="transportsChoice2" style="display: inline-block">Non</label>
+  </form>
+    
+  <form method="POST" style="position: absolute; top: 840px; left: 10px;">
+  <p style="display: inline">Est-il situe a proximite de commerces?</p>
+  <input type="radio" id="commercesChoice1" name="presence_commerces" value="oui" style="display: inline-block">
+  <label for="commercesChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="commercesChoice2" name="presence_commerces" value="non" style="display: inline-block">
+  <label for="commercesChoice2" style="display: inline-block">Non</label>  
+  </form>
+ 
+  <form method="POST" style="position: absolute; top: 870px; left: 10px;">
+  <p style="display: inline">Est-il situe dans une zone inondable?</p>
+  <input type="radio" id="inondableChoice1" name="zone_inondable" value="oui" style="display: inline-block">
+  <label for="inondableChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="inondableChoice2" name="zone_inondable" value="non" style="display: inline-block">
+  <label for="inondableChoice2" style="display: inline-block">Non</label>  
+  </form>
+
+  <form method="POST" style="position: absolute; top: 900px; left: 10px;">
+  <p style="display: inline">Est-il section 8?</p>
+  <input type="radio" id="huitChoice1" name="s8" value="oui" style="display: inline-block">
+  <label for="huitChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="huitChoice2" name="s8" value="non" style="display: inline-block">
+  <label for="huitChoice2" style="display: inline-block">Non</label>  
   </form>
   
-
+  <form method="POST" style="position: absolute; top: 930px; left: 10px;">
+  <p style="display: inline">Est-il section 42?</p>
+  <input type="radio" id="quarantedeuxChoice1" name="s42" value="oui" style="display: inline-block">
+  <label for="quarantedeuxChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="quarantedeuxChoice2" name="s42" value="non" style="display: inline-block">
+  <label for="quarantedeuxChoice2" style="display: inline-block">Non</label>  
+  </form>
+  
+  <form method="POST" style="position: absolute; top: 930px; left: 10px;">
+  <p style="display: inline">Entrez le type de bien: single family, multifamily, other?</p>
+  <input type="radio" id="bienChoice1" name="type_bien" value="oui" style="display: inline-block">
+  <label for="bienChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="bienChoice2" name="type_bien" value="non" style="display: inline-block">
+  <label for="bienChoice2" style="display: inline-block">Non</label>  
+  </form>
+  
+  <form method="POST" style="position: absolute; top: 930px; left: 10px;">
+  <p style="display: inline">Entrez l'état de l'immeuble: à renover, bon etat, excellent etat?</p>
+  <input type="radio" id="etatChoice1" name="etat" value="oui" style="display: inline-block">
+  <label for="etatChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="etatChoice2" name="etat" value="non" style="display: inline-block">
+  <label for="etatChoice2" style="display: inline-block">Non</label>  
+  </form>
+  
+  <form method="POST" style="position: absolute; top: 930px; left: 10px;">
+  <p style="display: inline">Quelle est la tendance du marche immobilier dans la région: baisse, stable, hause</p>
+  <input type="radio" id="tendanceChoice1" name="tendance_marche_immobilier" value="oui" style="display: inline-block">
+  <label for="tendanceChoice1" style="display: inline-block">Oui</label>
+  <input type="radio" id="tendanceChoice2" name="tendance_marche_immobilier" value="non" style="display: inline-block">
+  <label for="tendanceChoice2" style="display: inline-block">Non</label>  
+  </form>
+  
+  
+  
   
   <!-- ici c'est le package online de la communication du html avec python -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
