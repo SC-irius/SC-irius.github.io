@@ -1,5 +1,6 @@
 import os
 import cgi # importe le module cgi qui permet de traiter les données du formulaire
+from browser import document import sys sys.stdout = document[“stdout”] # rediriger la sortie vers l’élément “stdout”
 
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
