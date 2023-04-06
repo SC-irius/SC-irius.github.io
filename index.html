@@ -1,5 +1,10 @@
 <html>
 <head>
+  <body onload="brython()">
+  <!-- votre contenu HTML -->
+  <textarea id=“stdout” style=“position: absolute; left: 50px; top: 100px;”></textarea> <!-- élément qui affichera le résultat -->
+  <script type="text/python" src="realt_metrics_usa.py"></script>
+  </body>
   
   <form>
   <h1 style="position: absolute; top: 530px; left: 10px;">Realt.Inc Metrics :</h1>
@@ -204,23 +209,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js"></script>
 </head>
-<script src="https://cdn.jsdelivr.net/gh/brython-dev/brython/www/src/brython.js"></script>
-<script type="text/python">
-  def ma_fonction():
-      return "Hello, world!"
-
-  print(ma_fonction())  # Ceci sera affiché sur la console du navigateur
-
-  # Affichage du résultat sur la page web
-  result_div = document.createElement("div")
-  result_div.innerHTML = ma_fonction()
-  document.body.appendChild(result_div)
-</script>
   
-<body onload="brython()">
-  <!-- votre contenu HTML -->
-  <textarea id=“stdout” style=“position: absolute; left: 50px; top: 100px;”></textarea> <!-- élément qui affichera le résultat -->
-  <script type="text/python" src="realt_metrics_usa.py"></script>
-</body>
+
 
 </html>
