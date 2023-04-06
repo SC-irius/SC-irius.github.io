@@ -180,6 +180,19 @@ def evaluer_bien_immobilier():
         print(rue,"est considere comme une affaire correcte.")
     else:
         print(rue,"est considere comme une mauvaise affaire.")
+    import sys
+
+    class Logger(object):
+        def __init__(self, filename):
+            self.terminal = sys.stdout
+            self.log = open(filename, "a")
+
+        def write(self, message):
+            self.terminal.write(message)
+            self.log.write(message)  
+
+    sys.stdout = Logger("output.log")
+
         
 
 evaluer_bien_immobilier()
