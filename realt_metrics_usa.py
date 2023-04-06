@@ -14,21 +14,18 @@ def evaluer_bien_immobilier():
     zone_prix_m2 = document["zone_prix_m2"].value
     age = document["age"].value
     presence_ecoles = document["presence_ecoles"].value
-    presence_transports = int(input("{} est-il situe a proximite des transports en commun? \n| 1 | oui | 2 | non \n".format(rue)))
-    presence_commerces = int(input("{} est-il situe a proximite de commerces? \n| 1 | oui | 2 | non \n".format(rue)))
-    zone_inondable = int(input("{} est-il situe dans une zone inondable? \n| 1 | oui | 2 | non \n".format(rue)))
+    presence_transports = document["presence_transports"].value
+    presence_commerces = document["presence_commerce"].value
+    zone_inondable = document["zone_inondable"].value
     # Demander si la rue est de section 8 ou 42
-    s8 = int(input("{} est-il section 8? \n| 1 | oui | 2 | non \n".format(rue)))
-    if s8 == 1 :
-        s42 = 2
-    if s8 == 2:
-        s42 = int(input("{} est-il section 42? \n| 1 | oui | 2 | non \n".format(rue)))
-    type_bien = int(input("Entrez le type de bien : \n| 1 | single family | 2 | multifamily | 3 | other \n"))
-    etat = int(input("Entrez l'état de {} : \n| 1 | a renover | 2 | bon etat | 3 | excellent etat \n".format(rue)))
-    tendance_marche_immobilier = int(input("Quelle est la tendance du marche immobilier dans la région? \n| 1 | baisse | 2 | stable | 3 | hause \n"))
-    q_eau_ville = int(input("Quelle est la qualite de l'eau dans la région? \n| 1 | mauvaise | 2 | normal | 3 | bonne \n"))
-    nb_immigrations = int(input("Quelle est la tendance d'imigrations dans la région? \n| 1 | baisse | 2 | stable | 3 | hause \n"))
-    t_vacances_locatives = int(input("Quelle est le taux de vacances locatives dans la région? \n| 1 | baisse | 2 | stable | 3 | hause \n"))
+    s8 = document["s8"].value
+    s42 = document["s42"].value
+    type_bien = document["type_bien"].value
+    etat = document["etat"].value
+    tendance_marche_immobilier = document["tendance_marche_immobilier"].value
+    q_eau_ville = document["q_eau_ville"].value
+    nb_immigrations = document["nb_immigrations"].value
+    t_vacances_locatives = document["t_vacances_locatives"].value
 
     # Calcul du prix au mètre carré du bien
     prix_m2 = prix / surface
