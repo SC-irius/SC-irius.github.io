@@ -1,5 +1,66 @@
 <html>
 <head>
+  
+  <!-- ici c'est le package online de la communication du html avec python -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['gauge']});
+    google.charts.setOnLoadCallback(drawChart);
+
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['', ''],
+        ['', 0]
+      ]);
+
+      var options = {
+        width: 400, height: 400,
+        redFrom: 0, redTo: 40.5,
+        yellowFrom:40.5, yellowTo: 60.5,
+        greenFrom:60.5, greenTo:80.5,
+        greenFrom:60.5, greenTo: 100,
+        minorTicks: 5,
+        majorTicks: ['0%','25%','50%','75%','100%'],
+        max: 100,
+        min: 0,
+        startAngle: -45,
+        endAngle: 45,
+        pointerColor: 'black'
+      };
+
+      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+
+      var input = document.getElementById("input");
+      input.addEventListener("change", function() {
+        var value = parseFloat(input.value);
+        if (isNaN(value) || value < 0 || value > 100) {
+          alert("Pourcentage de la propriete RealT entre ");
+        } else {
+          data.setValue(0, 1, value);
+          chart.draw(data, options);
+        }
+      });
+    }
+ 
+   </script>
+</head>
+<body>
+  
+
+  <div class="container" style="align-items: center;">
+    <div class="jauge" style="margin-left: 20px;">
+      <div id="chart_div" style="width: 400px; height: 400px;position: absolute; top: 10px; left: 10px"></div>
+      <p style="position: absolute; top: 440px;">Pourcentage de la propriete RealT entre 0% et 100%</p>
+      <input id="input" type="text" style="position: absolute; top: 480px;">
+    </div>
+
+    
+  </div>
+  
   <body onload="brython()">
   <!-- votre contenu HTML -->
   <textarea id=“stdout” style=“position: absolute; left: 50px; top: 100px;”></textarea> <!-- élément qui affichera le résultat -->
@@ -125,66 +186,6 @@
   <button id="submit-btn">Valider les données</button>
   </form>
   
-  
-  <!-- ici c'est le package online de la communication du html avec python -->
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', {'packages':['gauge']});
-    google.charts.setOnLoadCallback(drawChart);
-
-
-    function drawChart() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['', ''],
-        ['', 0]
-      ]);
-
-      var options = {
-        width: 400, height: 400,
-        redFrom: 0, redTo: 40.5,
-        yellowFrom:40.5, yellowTo: 60.5,
-        greenFrom:60.5, greenTo:80.5,
-        greenFrom:60.5, greenTo: 100,
-        minorTicks: 5,
-        majorTicks: ['0%','25%','50%','75%','100%'],
-        max: 100,
-        min: 0,
-        startAngle: -45,
-        endAngle: 45,
-        pointerColor: 'black'
-      };
-
-      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-      chart.draw(data, options);
-
-      var input = document.getElementById("input");
-      input.addEventListener("change", function() {
-        var value = parseFloat(input.value);
-        if (isNaN(value) || value < 0 || value > 100) {
-          alert("Pourcentage de la propriete RealT entre ");
-        } else {
-          data.setValue(0, 1, value);
-          chart.draw(data, options);
-        }
-      });
-    }
- 
-   </script>
-</head>
-<body>
-  
-
-  <div class="container" style="align-items: center;">
-    <div class="jauge" style="margin-left: 20px;">
-      <div id="chart_div" style="width: 400px; height: 400px;position: absolute; top: 10px; left: 10px"></div>
-      <p style="position: absolute; top: 440px;">Pourcentage de la propriete RealT entre 0% et 100%</p>
-      <input id="input" type="text" style="position: absolute; top: 480px;">
-    </div>
-
-    
-  </div>
   <input id="titre" type="text" placeholder="Saisissez un titre ici" style="position: absolute; top: 10px; left: 410px; vertical-align: middle; font-size: 24px; border: none;">
   
   <!-- Ajout des images -->
