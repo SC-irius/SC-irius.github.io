@@ -69,7 +69,8 @@
   
   <form>
   <br><br>  
-  <h1>Realt.Inc Metrics :</h1>   
+  <h1>Realt.Inc Metrics :</h1> 
+    
   <label for="rue">Entrez la rue:</label>
   <input type="text" id="rue" name="rue" placeholder="Exemple: Rue de la Paix"/>
   <br><br>
@@ -183,8 +184,33 @@
   
   <br><br>
   <button id="submit-btn">Valider les données</button>
-  <br><br>
+  <br><br><br><br><br><br>
   </form>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#submit-btn').click(function() {
+      var rue_val = $('#rue').val();
+      var prix_val = $('#prix').val();
+
+      $.ajax({
+        url: 'realt_metrics_usa.py',
+        method: 'POST',
+        data: {
+          rue: rue_val,
+          prix: prix_val
+        },
+        success: function(response) {
+          console.log(response);
+        },
+        error: function(xhr, status, error) {
+          console.log(error);
+        }
+      });
+    });
+  });
+  </script>
   
   <input id="titre" type="text" placeholder="Saisissez un titre ici" style="position: absolute; top: 10px; left: 410px; vertical-align: middle; font-size: 24px; border: none;">
   
