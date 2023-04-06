@@ -10,59 +10,61 @@
   <h1 style="position: absolute; top: 530px; left: 10px;">Realt.Inc Metrics :</h1>
   <label for="rue" style="position: absolute; top: 600px; left: 10px;" >Entrez la rue:</label>
   <input type="text" id="rue" name="rue" placeholder="Exemple: Rue de la Paix" style="position: absolute; top: 600px; left: 100px;" />
+  <br><br>
   <label for="prix" style="position: absolute; top: 630px; left: 10px;" >Entrez le prix (Underlying Asset Price) en ($):</label>
   <input type="number" id="prix" name="prix" placeholder="Exemple: 50000" style="position: absolute; top: 630px; left: 310px;" />
-  <label for="expected_income" style="position: absolute; top: 660px; left: 10px;" >Quelle est le revenu attentu par annee (Expected Income) en (%):</label>
+  <br><br> 
+  <label for="expected_income" style="position: absolute; top: 660px; left: 10px;" >Quelle est le revenu attentu par annee (Expected Income) en (%):</label>    
   <input type="number" id="" name="expected_income" placeholder="Exemple: 10" style="position: absolute; top: 660px; left: 434px;" />
-  <label for="surface" style="position: absolute; top: 690px; left: 10px;" >Entrez la surface (Interior Size sqft) en (sqft):</label>
+  <br><br>
+  <label for="surface" style="position: absolute; top: 690px; left: 10px;" >Entrez la surface (Interior Size sqft) en (sqft):</label> 
   <input type="number" id="" name="surface" placeholder="Exemple: 1000" style="position: absolute; top: 690px; left: 308px;" />
-  <label for="zone_prix_m2" style="position: absolute; top: 720px; left: 10px;" >À combien s'élève le coût moyen par sqft dans cette région ? en ($/sqft):</label>
+  <br><br>
+  <label for="zone_prix_m2" style="position: absolute; top: 720px; left: 10px;" >À combien s'élève le coût moyen par sqft dans cette région ? en ($/sqft):</label> 
   <input type="number" id="" name="zone_prix_m2" placeholder="Exemple: 50" style="position: absolute; top: 720px; left: 478px;" />
+  <br><br>
   <label for="age" style="position: absolute; top: 750px; left: 10px;" >Combien d'années s'est-il écoulé depuis la construction de la proprite ? en (annees):</label>
   <input type="number" id="" name="age" placeholder="Exemple: 15" style="position: absolute; top: 750px; left: 550px;" />  
-  <br>
+  <br><br>
   <p style="display: inline">Est-il situé à proximité d'écoles ?</p>
   <input type="radio" id="ecolesChoice1" name="presence_ecoles" value="oui" style="display: inline-block">
   <label for="ecolesChoice1" style="display: inline-block">Oui</label>
   <input type="radio" id="ecolesChoice2" name="presence_ecoles" value="non" style="display: inline-block">
   <label for="ecolesChoice2" style="display: inline-block">Non</label>
-  <br>
-  <!-- Ajoutez les autres éléments <input> et <label> ici -->
-    
+  <br><br>
   <p style="display: inline">Est-il situe a proximite des transports en commun?</p>
   <input type="radio" id="transportsChoice1" name="presence_transports" value="oui" style="display: inline-block">
   <label for="transportsChoice1" style="display: inline-block">Oui</label>
   <input type="radio" id="transportsChoice2" name="presence_transports" value="non" style="display: inline-block">
   <label for="transportsChoice2" style="display: inline-block">Non</label>
-  <br>
-
+  <br><br>
   <p style="display: inline">Est-il situe a proximite de commerces?</p>
   <input type="radio" id="commercesChoice1" name="presence_commerces" value="oui" style="display: inline-block">
   <label for="commercesChoice1" style="display: inline-block">Oui</label>
   <input type="radio" id="commercesChoice2" name="presence_commerces" value="non" style="display: inline-block">
   <label for="commercesChoice2" style="display: inline-block">Non</label>  
-  <br>
+  <br><br>
 
   <p style="display: inline">Est-il situe dans une zone inondable?</p>
   <input type="radio" id="inondableChoice1" name="zone_inondable" value="oui" style="display: inline-block">
   <label for="inondableChoice1" style="display: inline-block">Oui</label>
   <input type="radio" id="inondableChoice2" name="zone_inondable" value="non" style="display: inline-block">
   <label for="inondableChoice2" style="display: inline-block">Non</label>  
-  <br>
+  <br><br>
 
   <p style="display: inline">Est-il section 8?</p>
   <input type="radio" id="huitChoice1" name="s8" value="oui" style="display: inline-block">
   <label for="huitChoice1" style="display: inline-block">Oui</label>
   <input type="radio" id="huitChoice2" name="s8" value="non" style="display: inline-block">
   <label for="huitChoice2" style="display: inline-block">Non</label>  
-  <br>
+  <br><br>
 
   <p style="display: inline">Est-il section 42?</p>
   <input type="radio" id="quarantedeuxChoice1" name="s42" value="oui" style="display: inline-block">
   <label for="quarantedeuxChoice1" style="display: inline-block">Oui</label>
   <input type="radio" id="quarantedeuxChoice2" name="s42" value="non" style="display: inline-block">
   <label for="quarantedeuxChoice2" style="display: inline-block">Non</label>  
-  <br>
+  <br><br>
   
   <p style="display: inline">Entrez le type de bien?</p>
   <input type="radio" id="bienChoice1" name="type_bien" value="1" style="display: inline-block">
@@ -71,7 +73,7 @@
   <label for="bienChoice2" style="display: inline-block">Multifamily</label>  
   <input type="radio" id="bienChoice2" name="type_bien" value="3" style="display: inline-block">
   <label for="bienChoice2" style="display: inline-block">Other</label>  
-  <br>
+  <br><br>
   
   <p style="display: inline">Entrez l'état de l'immeuble?</p>
   <input type="radio" id="etatChoice1" name="etat" value="1" style="display: inline-block">
@@ -80,7 +82,7 @@
   <label for="etatChoice2" style="display: inline-block">Bon etat</label>  
   <input type="radio" id="etatChoice2" name="etat" value="3" style="display: inline-block">
   <label for="etatChoice2" style="display: inline-block">excellent etat</label>
-  <br>
+  <br><br>
   
   <p style="display: inline">Quelle est la tendance du marche immobilier dans la région?</p>
   <input type="radio" id="tendanceChoice1" name="tendance_marche_immobilier" value="1" style="display: inline-block">
@@ -89,7 +91,7 @@
   <label for="tendanceChoice2" style="display: inline-block">Stable</label>  
   <input type="radio" id="tendanceChoice2" name="tendance_marche_immobilier" value="3" style="display: inline-block">
   <label for="tendanceChoice2" style="display: inline-block">Hause</label>
-  <br>
+  <br><br>
   
   <p style="display: inline">Quelle est la qualite de l'eau dans la région?</p>
   <input type="radio" id="villeChoice1" name="q_eau_ville" value="1" style="display: inline-block">
@@ -98,7 +100,7 @@
   <label for="villeChoice2" style="display: inline-block">Normal</label>  
   <input type="radio" id="villeChoice2" name="q_eau_ville" value="3" style="display: inline-block">
   <label for="villeChoice2" style="display: inline-block">Bonne</label>  
-  <br>
+  <br><br>
   
   <p style="display: inline">Quelle est la tendance d'imigrations dans la région?</p>
   <input type="radio" id="immigrationsChoice1" name="nb_immigrations" value="1" style="display: inline-block">
@@ -107,7 +109,7 @@
   <label for="immigrationsChoice2" style="display: inline-block">Stable</label>  
   <input type="radio" id="immigrationsChoice2" name="nb_immigrations" value="3" style="display: inline-block">
   <label for="immigrationsChoice2" style="display: inline-block">Hause</label> 
-  <br>
+  <br><br>
   
   <p style="display: inline">Quelle est le taux de vacances locatives dans la région?</p>
   <input type="radio" id="locativesChoice1" name="t_vacances_locatives" value="1" style="display: inline-block">
@@ -117,7 +119,7 @@
   <input type="radio" id="locativesChoice2" name="t_vacances_locatives" value="3" style="display: inline-block">
   <label for="locativesChoice2" style="display: inline-block">Hause</label>  
   
-  <br>
+  <br><br>
   <button id="submit-btn">Valider les données</button>
   </form>
   
