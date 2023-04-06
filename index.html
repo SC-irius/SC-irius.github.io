@@ -49,7 +49,6 @@
    </script>
 </head>
 <body>
-  
 
   <div class="container" style="align-items: center;">
     <div class="jauge" style="margin-left: 20px;">
@@ -57,8 +56,7 @@
       <p style="position: absolute; top: 440px;">Pourcentage de la propriete RealT entre 0% et 100%</p>
       <input id="input" type="text" style="position: absolute; top: 480px;">
     </div>
-
-    
+   
   </div>
   
   <body onload="brython()">
@@ -206,6 +204,7 @@
           def evaluer_bien_immobilier():
               # Demande des informations à l'utilisateur
               rue = document["rue"].value
+              print(rue)
               prix = document["prix"].value
               expected_income = document["expected_income"].value
               surface = document["surface"].value
@@ -389,12 +388,6 @@
   
   <img src="image2.jpg" alt="Deuxième image" style="width:100px; height:100px; position: absolute; top: 90px; left: 1170px">
 </body>
-  
-  
-<head>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js"></script>
-</head>
   
 
 
