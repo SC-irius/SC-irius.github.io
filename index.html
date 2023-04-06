@@ -68,7 +68,7 @@
   </form>
   
   <form method="POST" style="position: absolute; top: 960px; left: 10px;">
-  <p style="display: inline">Entrez le type de bien: single family, multifamily, other?</p>
+  <p style="display: inline">Entrez le type de bien?</p>
   <input type="radio" id="bienChoice1" name="type_bien" value="1" style="display: inline-block">
   <label for="bienChoice1" style="display: inline-block">Single family</label>
   <input type="radio" id="bienChoice2" name="type_bien" value="2" style="display: inline-block">
@@ -78,43 +78,53 @@
   </form>
   
   <form method="POST" style="position: absolute; top: 990px; left: 10px;">
-  <p style="display: inline">Entrez l'état de l'immeuble: à renover, bon etat, excellent etat?</p>
-  <input type="radio" id="etatChoice1" name="etat" value="oui" style="display: inline-block">
-  <label for="etatChoice1" style="display: inline-block">Oui</label>
-  <input type="radio" id="etatChoice2" name="etat" value="non" style="display: inline-block">
-  <label for="etatChoice2" style="display: inline-block">Non</label>  
+  <p style="display: inline">Entrez l'état de l'immeuble?</p>
+  <input type="radio" id="etatChoice1" name="etat" value="1" style="display: inline-block">
+  <label for="etatChoice1" style="display: inline-block">À renover</label>
+  <input type="radio" id="etatChoice2" name="etat" value="2" style="display: inline-block">
+  <label for="etatChoice2" style="display: inline-block">Bon etat</label>  
+  <input type="radio" id="etatChoice2" name="etat" value="3" style="display: inline-block">
+  <label for="etatChoice2" style="display: inline-block">excellent etat</label>
   </form>
   
   <form method="POST" style="position: absolute; top: 1020px; left: 10px;">
-  <p style="display: inline">Quelle est la tendance du marche immobilier dans la région: baisse, stable, hause</p>
-  <input type="radio" id="tendanceChoice1" name="tendance_marche_immobilier" value="oui" style="display: inline-block">
-  <label for="tendanceChoice1" style="display: inline-block">Oui</label>
-  <input type="radio" id="tendanceChoice2" name="tendance_marche_immobilier" value="non" style="display: inline-block">
-  <label for="tendanceChoice2" style="display: inline-block">Non</label>  
+  <p style="display: inline">Quelle est la tendance du marche immobilier dans la région:</p>
+  <input type="radio" id="tendanceChoice1" name="tendance_marche_immobilier" value="1" style="display: inline-block">
+  <label for="tendanceChoice1" style="display: inline-block">Baisse</label>
+  <input type="radio" id="tendanceChoice2" name="tendance_marche_immobilier" value="2" style="display: inline-block">
+  <label for="tendanceChoice2" style="display: inline-block">Stable</label>  
+  <input type="radio" id="tendanceChoice2" name="tendance_marche_immobilier" value="3" style="display: inline-block">
+  <label for="tendanceChoice2" style="display: inline-block">Hause</label>
   </form>
   
   <form method="POST" style="position: absolute; top: 1050px; left: 10px;">
-  <p style="display: inline">Quelle est la qualite de l'eau dans la région: mauvaise, normal, bonne?</p>
-  <input type="radio" id="villeChoice1" name="q_eau_ville" value="oui" style="display: inline-block">
-  <label for="villeChoice1" style="display: inline-block">Oui</label>
-  <input type="radio" id="villeChoice2" name="q_eau_ville" value="non" style="display: inline-block">
-  <label for="villeChoice2" style="display: inline-block">Non</label>  
+  <p style="display: inline">Quelle est la qualite de l'eau dans la région?</p>
+  <input type="radio" id="villeChoice1" name="q_eau_ville" value="1" style="display: inline-block">
+  <label for="villeChoice1" style="display: inline-block">Mauvaise</label>
+  <input type="radio" id="villeChoice2" name="q_eau_ville" value="2" style="display: inline-block">
+  <label for="villeChoice2" style="display: inline-block">Normal</label>  
+  <input type="radio" id="villeChoice2" name="q_eau_ville" value="3" style="display: inline-block">
+  <label for="villeChoice2" style="display: inline-block">Bonne</label>  
   </form>
   
   <form method="POST" style="position: absolute; top: 1080px; left: 10px;">
-  <p style="display: inline">Quelle est la tendance d'imigrations dans la région: baisse, stable, hause?</p>
-  <input type="radio" id="immigrationsChoice1" name="nb_immigrations" value="oui" style="display: inline-block">
-  <label for="immigrationsChoice1" style="display: inline-block">Oui</label>
-  <input type="radio" id="immigrationsChoice2" name="nb_immigrations" value="non" style="display: inline-block">
-  <label for="immigrationsChoice2" style="display: inline-block">Non</label>  
+  <p style="display: inline">Quelle est la tendance d'imigrations dans la région?</p>
+  <input type="radio" id="immigrationsChoice1" name="nb_immigrations" value="1" style="display: inline-block">
+  <label for="immigrationsChoice1" style="display: inline-block">Baisse</label>
+  <input type="radio" id="immigrationsChoice2" name="nb_immigrations" value="2" style="display: inline-block">
+  <label for="immigrationsChoice2" style="display: inline-block">Stable</label>  
+  <input type="radio" id="immigrationsChoice2" name="nb_immigrations" value="3" style="display: inline-block">
+  <label for="immigrationsChoice2" style="display: inline-block">Hause</label> 
   </form>
   
   <form method="POST" style="position: absolute; top: 1110px; left: 10px;">
-  <p style="display: inline">Quelle est le taux de vacances locatives dans la région: baisse, stable, hause?</p>
-  <input type="radio" id="locativesChoice1" name="t_vacances_locatives" value="oui" style="display: inline-block">
-  <label for="locativesChoice1" style="display: inline-block">Oui</label>
-  <input type="radio" id="locativesChoice2" name="t_vacances_locatives" value="non" style="display: inline-block">
-  <label for="locativesChoice2" style="display: inline-block">Non</label>  
+  <p style="display: inline">Quelle est le taux de vacances locatives dans la région?</p>
+  <input type="radio" id="locativesChoice1" name="t_vacances_locatives" value="1" style="display: inline-block">
+  <label for="locativesChoice1" style="display: inline-block">Baisse</label>
+  <input type="radio" id="locativesChoice2" name="t_vacances_locatives" value="2" style="display: inline-block">
+  <label for="locativesChoice2" style="display: inline-block">Stable</label>  
+  <input type="radio" id="locativesChoice2" name="t_vacances_locatives" value="3" style="display: inline-block">
+  <label for="locativesChoice2" style="display: inline-block">Hause</label>  
   </form>
   
   <!-- Le code pour le bouton de validation -->
