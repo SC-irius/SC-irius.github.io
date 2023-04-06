@@ -136,11 +136,6 @@
   <script type="text/javascript">
     google.charts.load('current', {'packages':['gauge']});
     google.charts.setOnLoadCallback(drawChart);
-      def evaluer_bien_immobilier
-      print(ma_fonction())
-    result_div = document.createElement("div")
-    result_div.innerHTML = ma_fonction()
-    document.body.appendChild(result_div)
 
 
     function drawChart() {
@@ -209,6 +204,18 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js"></script>
 </head>
+<script src="https://cdn.jsdelivr.net/gh/brython-dev/brython/www/src/brython.js"></script>
+<script type="text/python">
+  def ma_fonction():
+      return "Hello, world!"
+
+  print(ma_fonction())  # Ceci sera affiché sur la console du navigateur
+
+  # Affichage du résultat sur la page web
+  result_div = document.createElement("div")
+  result_div.innerHTML = ma_fonction()
+  document.body.appendChild(result_div)
+</script>
   
 <body onload="brython()">
   <!-- votre contenu HTML -->
