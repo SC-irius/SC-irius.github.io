@@ -1,8 +1,5 @@
 import os
 import cgi # importe le module cgi qui permet de traiter les données du formulaire
-from browser import document 
-import sys 
-sys.stdout = document[“stdout”] # rediriger la sortie vers l’élément “stdout”
 
 def evaluer_bien_immobilier():
     # Demande des informations à l'utilisateur
@@ -179,21 +176,7 @@ def evaluer_bien_immobilier():
     elif note_globale > 0.405:
         print(rue,"est considere comme une affaire correcte.")
     else:
-        print(rue,"est considere comme une mauvaise affaire.")
-    import sys
-
-    class Logger(object):
-        def __init__(self, filename):
-            self.terminal = sys.stdout
-            self.log = open(filename, "a")
-
-        def write(self, message):
-            self.terminal.write(message)
-            self.log.write(message)  
-
-    sys.stdout = Logger("output.log")
-
-        
+        print(rue,"est considere comme une mauvaise affaire.")      
 
 evaluer_bien_immobilier()
 os.system("pause")
