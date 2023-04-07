@@ -1,3 +1,4 @@
+
 <?php
   // On récupère les variables depuis le formulaire HTML 
   $rue = $_GET["rue"];
